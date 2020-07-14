@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type = "text/css" href = "./style.css" />
+    <title>ApiEarth</title>
+</head>
+<body>
+    <div class="outerCont" >
+        <div class="flags" id = 'flags' >
+            <div class="flag">
+                <img src="http://www.geognos.com/api/en/countries/flag/AM.json" alt="your browser doesnt support img tag" class="flagImg" />
+                <div class="flagDetails" > 
+                    click on the flag to see more
+                </div>
+            </div>
+        </div>
+        <div class="info" id = 'info' >
+            <div class="infoTitleCont" >
+                <p class='infoTitle' >Information about the country</p>
+            </div>
+            <div class="infoDataCont" >
+                <img src="https://media.giphy.com/media/14oEbU8lEMN1WU/giphy.gif" alt="your browser doesnt support img tag" class="infoLoading" />
+            </div>
+        </div>
+    </div>
+    <script src = './api.js' ></script>
+</body>
+</html>
