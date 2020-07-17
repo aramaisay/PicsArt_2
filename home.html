@@ -9,19 +9,17 @@
 <body>
     <div class="outerCont" >
         <div class="flags" id = 'flags' >
-            <div class="flag">
-                <img src="http://www.geognos.com/api/en/countries/flag/AM.json" alt="your browser doesnt support img tag" class="flagImg" />
-                <div class="flagDetails" > 
-                    click on the flag to see more
-                </div>
+            <div class="loadingForTheCont" id = 'flagsLoading' >
+                <img class="loadingImg" src = 'https://images.squarespace-cdn.com/content/v1/54079863e4b04f2a4fe900ae/1523659708220-FK113XRLS6JIDN0YOBNR/ke17ZwdGBToddI8pDm48kMRyhYDgPk9y7GMUxyVGe-RZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwTwB56mAbIEM_RUDN84nGD26V9tGS1fakwqU_DMvMf560VQnogxNVZCWt6cFAuyuY/spinningearth.gif?format=1500w' />
             </div>
         </div>
-        <div class="info" id = 'info' >
-            <div class="infoTitleCont" >
-                <p class='infoTitle' >Information about the country</p>
+        <div class="info"  >
+            <div class="infoTitleCont">
+                <p class='infoTitle'  id = 'infoTitle'  >Information about the country</p>
             </div>
-            <div class="infoDataCont" >
-                <img src="https://media.giphy.com/media/14oEbU8lEMN1WU/giphy.gif" alt="your browser doesnt support img tag" class="infoLoading" />
+            <div class="infoDataCont" id = 'infoCont' >
+                <!-- <img src="https://media.giphy.com/media/14oEbU8lEMN1WU/giphy.gif" alt="your browser doesnt support img tag" class="infoLoading" /> -->
+                Click at any country to see the data
             </div>
         </div>
     </div>

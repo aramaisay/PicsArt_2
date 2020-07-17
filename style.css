@@ -25,10 +25,13 @@
     height: 95%;
     background-color: rgb(202, 243, 243);
     border-radius: 1rem;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-flow: row wrap;
 }
 .flag{
-    width: 10rem;
+    width: 20%;
     height: 10rem;  
     overflow: hidden;
     border: var(--black) 0.125rem solid;
@@ -92,8 +95,53 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--black);
+    font-weight: 700;
+}
+.infoDataContActive{
+    width: 80%;
+    height: 75%;
+    background-color: rgb(202, 243, 243);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--black);
+    font-weight: 700;
+    flex-flow: column nowrap;
 }
 .infoLoading{
     width: 0%;
     height: 100%;
+}
+.loadingForTheCont{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loadingImg{
+    width: 60%;
+}
+.Button {
+    margin: 10px;
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row nowrap;
+    border: 1px solid rgb(175, 175, 175);
+    border-radius: 10px;
+    font-size: 20px;
+    color:  rgb(128, 127, 127);
+    cursor: pointer;
+    transition: 0.2s linear;
+    outline: none !important;
+}
+
+Button:hover {
+    background-color: var(--black);
+    color:  rgb(175, 175, 175) ;
 }
