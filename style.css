@@ -1,17 +1,14 @@
-:root{
-    --black:#031424;
-    --indigo:#05447A;
-    --stPatricksBlue:#073388;
-    --blue:#0D00B0;
-    --gold:#E7A20D;
-    --white:#F5F2F0;
+body {
+    background-color: rgb(241, 240, 240);
+    overflow-x: hidden;
 }
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.outerCont{
+
+.outerCont {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -20,7 +17,8 @@
     flex-flow: row wrap;
     
 }
-.flags{
+
+.flags {
     width: 70%;
     height: 95%;
     background-color: rgb(202, 243, 243);
@@ -30,101 +28,138 @@
     display: flex;
     flex-flow: row wrap;
 }
-.flag{
+
+.flag {
     width: 20%;
     height: 10rem;  
     overflow: hidden;
-    border: var(--black) 0.125rem solid;
+    border: 1px solid #031424;
     border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
-.flagDetails{
+
+.flagDetails {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--black);
-    color: var(--gold);
+    background-color: #031424;
+    color: rgb(241, 240, 240);
+    border: 1px solid rgb(241, 240, 240);
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     transition: all 0.2s linear;
 }
-.flag:hover .flagDetails{
+
+.flag:hover .flagDetails {
     top: 0;
+    cursor: pointer;
 }
-.flagImg{
+
+.flagImg {
     width: 100%;
     height: 100%;
 }
-.info{
+
+.info {
     width: 25%;
     height: 95%;
     background-color: rgb(202, 243, 243);
+    border: 1px solid #031424;
     border-radius: 1rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-flow: column nowrap;
+
 }
-.infoTitleCont{
+
+.infoTitleCont {
     width: 80%;
     height: 15%;
-    background-color: var(--black);
+    background-color: #031424;
+    border: 3px solid rgb(241, 240, 240);
     border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
-.infoTitle{
-    color: var(--white);
-    font-size: 1.125rem;
-    font-weight: 700;
-    text-align: center;
+
+.infoTitle {
+    color: rgb(241, 240, 240);
 }
-.infoDataCont{
+
+.infoDataCont {
     width: 80%;
-    height: 75%;
-    background-color: rgb(202, 243, 243);
+    height: 40%;
+    background-color: rgb(241, 240, 240);
+    border: 1px solid #031424;
     border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--black);
-    font-weight: 700;
+    color: #031424;
+    font-weight: 700;  
 }
-.infoDataContActive{
-    width: 80%;
-    height: 75%;
+
+.infoDataContActive {
+    top: auto;
+    width: 100%;
+    height: 100%;
     background-color: rgb(202, 243, 243);
+    color: #031424;
     border-radius: 1rem;
     display: flex;
     justify-content: space-around;
+    text-align: center;
     align-items: center;
-    color: var(--black);
     font-weight: 700;
     flex-flow: column nowrap;
+
 }
-.infoLoading{
+.infoDataEnd {
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #031424;
+    border: 3px solid rgb(241, 240, 240);
+    color: rgb(241, 240, 240);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+    font-weight: 300;
+    flex-flow: column wrap;
+    box-sizing: border-box;
+
+}
+
+.infoLoading {
     width: 0%;
     height: 100%;
 }
-.loadingForTheCont{
+
+.loadingForTheCont {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.loadingImg{
+.loadingImg {
     width: 60%;
 }
-.Button {
+
+.button {
     margin: 10px;
     width: 100%;
     height: 2.5rem;
@@ -132,16 +167,26 @@
     justify-content: space-around;
     align-items: center;
     flex-flow: row nowrap;
-    border: 1px solid rgb(175, 175, 175);
-    border-radius: 10px;
+    background-color: rgb(241, 240, 240);
+    color: #031424;
+    border: 1px solid #031424;
+    border-radius: 1rem;
     font-size: 20px;
-    color:  rgb(128, 127, 127);
     cursor: pointer;
     transition: 0.2s linear;
     outline: none !important;
 }
 
-Button:hover {
-    background-color: var(--black);
-    color:  rgb(175, 175, 175) ;
+button:hover {
+    background-color: #031424;
+    color:  rgb(241, 240, 240) ;
+    border: 3px solid rgb(241, 240, 240);
 }
+
+p {
+    color: #031424;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: center;
+}
+
