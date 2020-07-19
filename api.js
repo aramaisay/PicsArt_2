@@ -12,8 +12,8 @@ const getInfoAboutTheCountry = async (code) => {
             x: data.latlng[0],
             y: data.latlng[1],
             area: data.area,
-            currencies: data.currencies,
-            lang: data.languages,
+            currencies: data.currencies[0].name,
+            lang: data.languages[0].nativeName,
             flag: data.flag
         }
     }
@@ -29,20 +29,55 @@ const DeleteTheLoadingElement = (id) => {
     document.getElementById(id).remove()
 }
 
+// ************************
+// Overlay Div
+// ************************
+
+const activateTheOverlayDiv = () => {
+    const theDiv = document.getElementById('overlay');
+    theDiv.style.top = '0';
+}
+
+const callBackForTheCross = () => {
+    const theDiv = document.getElementById('overlay');
+    theDiv.style.top = '100%';
+    const DataBody = document.getElementById('bodyOfOverlay');
+    DataBody.innerHTML = '';
+}
+
+const connectTheCallback = () => {
+    const TheCross = document.getElementById('cross');
+    TheCross.onclick = callBackForTheCross;
+}
+
+const CreateTheData = (key,value) => {
+    const newDataDiv = document.createElement('div');
+    newDataDiv.innerText = `${key} - ${value}`;
+    newDataDiv.classList.add('DataDiv');
+    return newDataDiv;
+}
+const PlaceTheData = (id,dataDiv) => {
+    const parentNode = document.getElementById(id);
+    parentNode.appendChild(dataDiv);
+}
+
+const loopThroughTheData = (data) => {
+    for(let key in data){
+        PlaceTheData( 'bodyOfOverlay' ,CreateTheData(key,data[key]));
+    }
+}
+
 // ***********************
 // Callbacks
 // ***********************
 
 const generalCallback = async (code) => {
     const data = await getInfoAboutTheCountry(code);
-    const genData = JSON.stringify(data);
-    const createDataElement = document.createElement("div");
-    createDataElement.setAttribute('class', 'infoDataEnd');
-    createDataElement.setAttribute('id', 'infoDataContEnd');
-    document.getElementById('infoCont').appendChild(createDataElement)
-    document.getElementById("infoDataContEnd").innerHTML = genData;
+    activateTheOverlayDiv();
+    connectTheCallback();
+    console.log(data);
+    loopThroughTheData(data);
 }
-
 
 // ***********************
 // Manipulation with the view of info
@@ -57,22 +92,15 @@ const setTheTitleOfTheInfo = (element, idForTheTitle) => {
 // creating buttons
 const createButton = text => {
     const btn = document.createElement('button');
-    btn.setAttribute('class', 'button');
-    btn.setAttribute('id', 'button');
+    btn.classList.add('button');
     btn.innerText = text;
     return btn;
-}
-
-const deleteButton = () => {
-    const element = document.getElementById('button');
-    element.parentNode.removeChild(element)
 }
 
 // addingTheButtons
 const placeTheButton = (idWhereToPLace, btn, callBack) => {
     const cont = document.getElementById(idWhereToPLace);
     btn.addEventListener('click', callBack);
-    btn.addEventListener('click', deleteButton);
     cont.appendChild(btn);
 }
 
